@@ -1,4 +1,4 @@
-# Package Placeholder
+# ACTS Package Placeholder
 
 The core package will be organized here.
 
@@ -10,4 +10,3 @@ Planned modules:
 - `rl`: DQN environment, training, and evaluation
 - `sam`: SAM wrapper and mask decoder adaptation
 - `evaluation`: Dice, IoU, NSD, and reporting utilities
-

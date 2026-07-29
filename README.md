@@ -1,6 +1,6 @@
-# SAM-CT Sequence Agent
+# ACTS
 
-This repository contains the official implementation placeholder for a CT sequence segmentation agent based on Segment Anything and slice-wise policy refinement.
+This repository contains the official implementation placeholder for ACTS, a CT sequence segmentation framework based on Segment Anything and slice-wise policy refinement.
 
 > The full source code, trained model checkpoints, and detailed running instructions will be organized and released in this repository.
 
@@ -27,7 +27,7 @@ This is a pre-release placeholder prepared for anonymous review. Code and docume
 ├── .gitignore
 ├── scripts/
 │   └── README.md
-└── sam_ct_agent/
+└── acts/
     └── README.md
 ```
 
@@ -42,4 +42,3 @@ Large files such as SAM checkpoints, fine-tuned weights, DQN policies, and nnU-N
 ## Citation
 
 Citation information will be added after publication.
-
