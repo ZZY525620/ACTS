@@ -8,6 +8,7 @@ Install PyTorch following the official instructions for your CUDA version, then 
 
 ```bash
 pip install -r requirements.txt
+pip install -e . --no-build-isolation --no-deps
 ```
 
 The original Segment Anything ViT-B checkpoint should be available as:

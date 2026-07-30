@@ -36,6 +36,7 @@ Create a Python environment with PyTorch and install the remaining dependencies:
 
 ```bash
 pip install -r requirements.txt
+pip install -e . --no-build-isolation --no-deps
 ```
 
 ACTS uses the original SAM ViT-B checkpoint by default. Download `sam_vit_b_01ec64.pth` from the official Segment Anything release and place it in the repository root, or pass its path with `--model-path` when supported by a script.
@@ -120,6 +121,8 @@ For more details, see:
 - [docs/candidate_pool.md](docs/candidate_pool.md): exact candidate pool construction, including box perturbations and point prompts.
 - [docs/experiment_protocol.md](docs/experiment_protocol.md): dataset splits, labels, and experiment settings.
 - [docs/reproduce.md](docs/reproduce.md): local setup and reproduction commands.
+- [docs/troubleshooting.md](docs/troubleshooting.md): common environment, data, and checkpoint issues.
+- [docs/release_checklist.md](docs/release_checklist.md): included/excluded files and release sanity checks.
 
 ## Current Results
 

@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "acts-ct"
+version = "0.1.0"
+description = "ACTS: CT sequence segmentation with SAM candidate correction and DQN policy refinement"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy<2",
+    "scipy",
+    "pandas",
+    "tqdm",
+    "Pillow",
+    "nibabel",
+    "torch",
+    "torchvision",
+    "opencv-python",
+    "matplotlib",
+    "scikit-image",
+    "segment-anything",
+]
+
+[tool.setuptools.packages.find]
+include = ["acts*"]
