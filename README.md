@@ -98,7 +98,12 @@ python scripts/evaluate_binary_nii_metrics.py \
   --summary-out summary.csv
 ```
 
-See [docs/experiment_protocol.md](docs/experiment_protocol.md) for the exact splits and settings used for the reported experiments.
+For more details, see:
+
+- [docs/method_overview.md](docs/method_overview.md): ACTS pipeline, DQN state/action/reward, and SAM adaptation.
+- [docs/candidate_pool.md](docs/candidate_pool.md): exact candidate pool construction, including box perturbations and point prompts.
+- [docs/experiment_protocol.md](docs/experiment_protocol.md): dataset splits, labels, and experiment settings.
+- [docs/reproduce.md](docs/reproduce.md): local setup and reproduction commands.
 
 ## Current Results
 
