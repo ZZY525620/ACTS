@@ -81,8 +81,24 @@ Run the fixed AMOS pipeline for four organs:
 
 ```bash
 python scripts/run_amos_full_pipeline_fixed.py \
+  --data-dir Data/amos \
+  --sam-checkpoint sam_vit_b_01ec64.pth \
   --organs liver spleen right_kidney left_kidney \
   --output-dir outputs/amos_pipeline_fixed \
+  --dqn-epochs 40 \
+  --max-steps 20 \
+  --ft-epochs 4 \
+  --device cuda
+```
+
+Run the FLARE22 four-organ pipeline:
+
+```bash
+python scripts/run_flare_full_pipeline.py \
+  --data-dir Data/FLARE22 \
+  --sam-checkpoint sam_vit_b_01ec64.pth \
+  --organs liver spleen right_kidney left_kidney \
+  --output-dir outputs/flare_pipeline \
   --dqn-epochs 40 \
   --max-steps 20 \
   --ft-epochs 4 \

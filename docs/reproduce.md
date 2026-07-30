@@ -125,6 +125,8 @@ The AMOS pipeline script runs the complete sequence:
 
 ```bash
 python scripts/run_amos_full_pipeline_fixed.py \
+  --data-dir Data/amos \
+  --sam-checkpoint sam_vit_b_01ec64.pth \
   --organs liver spleen right_kidney left_kidney \
   --output-dir outputs/amos_pipeline_fixed \
   --dqn-epochs 40 \
@@ -166,3 +168,21 @@ AMOS22:
 - Comparison test subset: `amos_0014`, `amos_0015`
 
 See [experiment_protocol.md](experiment_protocol.md) for the exact settings used in the reported tables.
+
+## FLARE22 Full Pipeline
+
+The FLARE22 large-organ pipeline uses the same ACTS stages as the AMOS script, with FLARE-specific case naming and labels:
+
+```bash
+python scripts/run_flare_full_pipeline.py \
+  --data-dir Data/FLARE22 \
+  --sam-checkpoint sam_vit_b_01ec64.pth \
+  --organs liver spleen right_kidney left_kidney \
+  --output-dir outputs/flare_pipeline \
+  --dqn-epochs 40 \
+  --max-steps 20 \
+  --ft-epochs 4 \
+  --device cuda
+```
+
+Use `--skip-sam-ft` to run only frozen-SAM cache construction, frozen-cache DQN training, and frozen DQN evaluation.

@@ -55,6 +55,7 @@ from acts.sequence.propagate import propagate_sequence
 
 DATA = ROOT / "Data" / "amos"
 SAM_CKPT = ROOT / "sam_vit_b_01ec64.pth"
+MODEL_TAG = "amos"
 
 TRAIN_CASES = ["amos_0001", "amos_0004", "amos_0005", "amos_0006", "amos_0007", "amos_0009", "amos_0010"]
 TEST_CASES = ["amos_0011", "amos_0014", "amos_0015"]
@@ -420,7 +421,7 @@ def finetune_sam_for_organ(
     from segment_anything import sam_model_registry
     import torch.nn.functional as F
 
-    ft_model = out_dir / f"sam_vit_b_{organ_name}_amos_maskdecoder_fixed.pth"
+    ft_model = out_dir / f"sam_vit_b_{organ_name}_{MODEL_TAG}_maskdecoder_fixed.pth"
     if ft_model.exists():
         print(f"  {organ_name}: skip SAM FT (exists)")
         return ft_model
@@ -533,7 +534,10 @@ def write_eval_table(path: Path, rows: list[dict[str, Any]]) -> None:
 
 
 def main() -> None:
+    global DATA, SAM_CKPT
     parser = argparse.ArgumentParser(description="Run fixed AMOS SAM-CT pipeline.")
+    parser.add_argument("--data-dir", type=Path, default=DATA)
+    parser.add_argument("--sam-checkpoint", type=Path, default=SAM_CKPT)
     parser.add_argument("--output-dir", type=Path, default=ROOT / "outputs" / "amos_pipeline_fixed")
     parser.add_argument("--organs", nargs="+", default=["liver"], choices=sorted(ORGANS))
     parser.add_argument("--sam-size", type=int, default=256)
@@ -548,6 +552,8 @@ def main() -> None:
     args = parser.parse_args()
 
     set_seed(args.seed)
+    DATA = args.data_dir
+    SAM_CKPT = args.sam_checkpoint
     out = args.output_dir
     out.mkdir(parents=True, exist_ok=True)
     selected_organs = {name: ORGANS[name] for name in args.organs}
@@ -556,7 +562,7 @@ def main() -> None:
         "train_cases": TRAIN_CASES,
         "test_cases": TEST_CASES,
         "organs": selected_organs,
-        "sam_checkpoint": str(SAM_CKPT),
+        "sam_checkpoint": str(args.sam_checkpoint),
         "sam_size": args.sam_size,
         "topk_ratio": args.topk_ratio,
         "max_steps": args.max_steps,
