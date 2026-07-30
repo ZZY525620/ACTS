@@ -1,4 +1,4 @@
-# Python
+﻿# Python
 __pycache__/
 *.py[cod]
 *.pyo
@@ -20,9 +20,9 @@ conda_env/
 Thumbs.db
 
 # Data and medical images
-Data/
-data/
-datasets/
+/Data/
+/data/
+/datasets/
 *.nii
 *.nii.gz
 *.mha
@@ -31,13 +31,12 @@ datasets/
 *.dcm
 
 # Outputs and experiments
-outputs/
-output/
-results/
-experiments/
-visualizations/
-paper_figures/
-comparison_experiments/
+/outputs/
+/output/
+/experiments/
+/visualizations/
+/paper_figures/
+/comparison_experiments/
 
 # Model checkpoints
 *.pth
@@ -59,4 +58,5 @@ comparison_experiments/
 *.xlsx
 *_private*
 *personal*
+
 

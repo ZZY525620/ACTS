@@ -1,12 +1,8 @@
 # Scripts
 
-Experiment scripts will be added here.
+This directory contains reproducible entry points used in the current release.
 
-Planned script groups:
+- `run_amos_full_pipeline_fixed.py`: fixed AMOS pipeline for cache construction, frozen-SAM DQN training, SAM mask-decoder adaptation, cache rebuilding, and final DQN evaluation.
+- `evaluate_binary_nii_metrics.py`: shared metric script for binary NIfTI predictions. It computes Dice, IoU, and NSD from a CSV manifest.
 
-- Candidate cache construction
-- DQN training and evaluation
-- SAM mask decoder adaptation
-- Metric computation
-- Visualization and table generation
-
+Large intermediate outputs are intentionally written outside Git-tracked files, usually under `outputs/`.

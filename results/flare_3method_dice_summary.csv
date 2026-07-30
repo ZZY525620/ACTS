@@ -1,0 +1,5 @@
+﻿method,liver,spleen,right_kidney,left_kidney,mean_dice
+Ours,0.8449,0.9471,0.9440,0.9637,0.9249
+MedSAM2,0.9799,0.9842,0.9349,0.9555,0.9636
+SAM2Medical3D,0.4209,0.0464,0.5817,0.5552,0.4011
+
