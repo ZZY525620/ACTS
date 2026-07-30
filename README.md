@@ -130,6 +130,8 @@ The compact CSV summaries in [results/](results/) report the current frozen/fine
 | FLARE22 | 0041-0050 | 0.8449 | 0.9471 | 0.9440 | 0.9637 | 0.9249 |
 | AMOS22 | 0014, 0015 | 0.7568 | 0.6920 | 0.8428 | 0.8619 | 0.7884 |
 
+Additional CSV files in [results/](results/) include FLARE module ablations and SAM adaptation internal ablations.
+
 ## Notes
 
 - This repository does not include medical images, labels, SAM checkpoints, fine-tuned SAM weights, DQN policies, or generated prediction volumes.
