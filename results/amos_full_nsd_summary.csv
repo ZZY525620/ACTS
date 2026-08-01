@@ -1,0 +1,8 @@
+method,liver,spleen,right_kidney,left_kidney,mean_nsd,note
+Ours,0.4409,0.4302,0.6349,0.6640,0.5425,FT-DQN on AMOS train set
+MedSAM2,0.8181,0.9081,0.8094,0.8809,0.8541,public pretrained weights
+nnUNet,0.5112,0.7136,0.7949,0.8439,0.7159,public pretrained weights
+Sli2Vol,0.3524,0.5478,0.5897,0.6304,0.5301,public pretrained weights
+Medical-SAM2,0.6128,0.1409,0.0492,0.0585,0.2154,public pretrained weights
+SAM2Medical3D,0.0000,0.0000,0.0000,0.0000,0.0000,zero-shot
+FoB_SAM,0.0885,0.0313,0.0169,0.0575,0.0486,zero-shot
